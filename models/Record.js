@@ -8,6 +8,6 @@ const recordSchema = new mongoose.Schema({
     phone: { type: String, required: true },
     address: { type: String, required: true },
     remarks: { type: String }
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('Record', recordSchema);

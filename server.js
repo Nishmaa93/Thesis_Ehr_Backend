@@ -7,6 +7,7 @@ const path = require('path');
 const { exec } = require('child_process');
 const fs = require('fs');
 const recordsRoute = require('./routes/records'); // Importing routes
+const usersRoute = require('./routes/users');
 const app = express();
 const PORT = 5000;
 
@@ -64,6 +65,7 @@ app.use('/api/', recordsRoute);
 app.get('/api', (req, res) => {
     res.send('API is working');
 });
+app.use('/user/', usersRoute);
 
 // Prediction route
 app.post('/api/predict', upload.single('image'), (req, res) => {
